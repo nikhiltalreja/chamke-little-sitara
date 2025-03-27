@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamke Chamke little Sitara | Nikhil Talreja</title>
+    <style>
+        :root {
+            --primary: #8E44AD;  /* Purple from album */
+            --secondary: #2C3E50; /* Deep blue */
+            --accent: #F1C40F;   /* Gold stars */
+            --text: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+        
+        body {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            z-index: 10;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .album-art {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+            border: 3px solid var(--accent);
+            transition: transform 0.5s ease;
+        }
+        
+        .album-art:hover {
+            transform: scale(1.03) rotateZ(2deg);
+        }
+        
+        .album-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--accent);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        
+        .stream-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .stream-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .stream-link img {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            object-fit: contain;
+        }
+        
+        /* Platform colors */
+        .spotify { background: #1DB954; }
+        .apple { background: #FA233B; }
+        .youtube { background: #FF0000; }
+        .youtube-music { background: #FF3333; }
+        
+        /* Stars animation */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: var(--accent);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: twinkle var(--duration) infinite ease-in-out;
+            opacity: 0;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 480px) {
+            .album-art {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Twinkling stars background -->
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <div class="album-art">
+            <img src="https://lh3.googleusercontent.com/PUSc5iCZbL7tmoebv3-Ut1DGpvov8wSglAwL33y1bFSest_sAhHsCMId5qyV5tcnFZs5c26vj-RbIRbbbg=w544-h544-l90-rj" alt="Chamke Chamke little Sitara Album Art">
+        </div>
+        
+        <h1>Chamke Chamke little Sitara</h1>
+        <h2>Nikhil Talreja</h2>
+        
+        <div class="links">
+            <a href="https://open.spotify.com/track/5M9Hv2WJ9xz2ZzEeIeXUrP" class="stream-link spotify" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/1024px-Spotify_logo_without_text.svg.png" alt="Spotify">
+                Stream on Spotify
+            </a>
+            
+            <a href="https://music.apple.com/us/album/chamke-chamke-little-sitara-twinkle-twinkle-little-star/1718230432?i=1718230434" class="stream-link apple" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_white.svg/505px-Apple_logo_white.svg.png" alt="Apple Music">
+                Stream on Apple Music
+            </a>
+            
+            <a href="https://music.youtube.com/playlist?list=OLAK5uy_nKkr67oTgrMzYDtXcxsmgqxWv0atwqtC4&si=L6x1sljYus8mT5cS" class="stream-link youtube-music" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/YouTube_Music_icon_%282020%29.svg/1024px-YouTube_Music_icon_%282020%29.svg.png" alt="YouTube Music">
+                Stream on YouTube Music
+            </a>
+            
+            <a href="https://www.youtube.com/watch?v=97nd--8yhxE" class="stream-link youtube" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube">
+                Watch on YouTube
+            </a>
+        </div>
+        
+        <footer>
+            &copy; 2023 Nikhil Talreja. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        // Create twinkling stars
+        const starsContainer = document.getElementById('stars');
+        const starCount = 30;
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Random properties
+            const size = Math.random() * 10 + 5;
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const duration = Math.random() * 3 + 2 + 's';
+            const delay = Math.random() * 5 + 's';
+            
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${x}%`;
+            star.style.top = `${y}%`;
+            star.style.setProperty('--duration', duration);
+            star.style.animationDelay = delay;
+            
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
