@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chamke Chamke little Sitara | Nikhil Talreja</title>
     <style>
-         :root {
-            --primary: #6A5ACD;  /* Softer purple (SlateBlue) */
-            --secondary: #483D8B; /* DarkSlateBlue */
-            --accent: #FFD700;   /* Gold for highlights */
-            --button: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
-            --button-hover: rgba(255, 255, 255, 0.25);
-          }
+        :root {
+            --primary: #8E44AD;  /* Purple from album */
+            --secondary: #2C3E50; /* Deep blue */
+            --accent: #F1C40F;   /* Gold stars */
+            --text: #ffffff;
+        }
         
         * {
             margin: 0;
@@ -94,23 +93,32 @@
         }
         
         .stream-link {
-            background: var(--button);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            padding: 15px 25px;
             color: white;
+            text-decoration: none;
+            font-weight: 600;
             transition: all 0.3s ease;
-          }
-          
-          .stream-link:hover {
-            background: var(--button-hover);
-            transform: translateY(-2px);
-          }
-
-          /* Logos Stay Pristine */
-          .stream-link img {
-            filter: brightness(0) invert(1); /* Forces white logos */
-            opacity: 0.9;
-          }
+        }
+        
+        .stream-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .stream-link img {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            object-fit: contain;
+        }
         
         /* Platform colors */
         .spotify { background: #1DB954; }
